@@ -7,7 +7,7 @@ namespace Hangly.Windows;
 /// transparent overlay window and a tray icon, and shuts down only when the tray
 /// menu's Exit is chosen, mirroring the macOS app having no Dock icon.
 /// </summary>
-public partial class App : Application
+public partial class App : System.Windows.Application
 {
     private OverlayWindow? _overlay;
     private TrayIconManager? _tray;

@@ -21,7 +21,7 @@ public partial class OverlayWindow : Window
 
     private TimeSpan? _lastRenderingTime;
     private TimeSpan _lastMouseTime;
-    private Point _lastMousePoint;
+    private System.Windows.Point _lastMousePoint;
     private bool _isDragging;
 
     public OverlayWindow()
@@ -87,7 +87,7 @@ public partial class OverlayWindow : Window
         Canvas.CaptureMouse();
     }
 
-    private void Canvas_MouseMove(object sender, MouseEventArgs e)
+    private void Canvas_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
     {
         if (!_isDragging) return;
 
@@ -115,5 +115,5 @@ public partial class OverlayWindow : Window
         Canvas.ReleaseMouseCapture();
     }
 
-    private static Vec2 ToVec2(Point p) => new(p.X, p.Y);
+    private static Vec2 ToVec2(System.Windows.Point p) => new(p.X, p.Y);
 }

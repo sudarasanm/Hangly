@@ -3,6 +3,15 @@ using System.Windows;
 using System.Windows.Media;
 using Hangly.Windows.Physics;
 
+// System.Drawing (pulled in implicitly by UseWindowsForms) defines types with the
+// same short names as these WPF ones (Point, Pen, Brush, Color, Brushes). Aliasing
+// pins each name to the WPF type without qualifying every use site below.
+using Point = System.Windows.Point;
+using Pen = System.Windows.Media.Pen;
+using Brush = System.Windows.Media.Brush;
+using Color = System.Windows.Media.Color;
+using Brushes = System.Windows.Media.Brushes;
+
 namespace Hangly.Windows;
 
 /// <summary>
