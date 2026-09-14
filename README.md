@@ -1,10 +1,22 @@
 # Hangly for Windows (port scaffold)
 
-An early, unverified Windows port of [Hangly](https://github.com/SharanCreatedThis/Hangly), the macOS
-menu-bar charm-on-a-rope app. **This code has not been built or run** — it was
-written on macOS, where the required WPF/WinForms toolchain doesn't exist. It needs
-a Windows machine with the .NET 8 SDK (or Visual Studio 2022) to compile and test
-for the first time.
+An early Windows port of [Hangly](https://github.com/SharanCreatedThis/Hangly), the
+macOS menu-bar charm-on-a-rope app.
+
+## Download (no .NET install required)
+
+Grab the latest zip from [Releases](../../releases/latest), unzip it, and run
+`Hangly.Windows.exe`. It's published self-contained, so the .NET runtime is bundled
+in — nothing else to install.
+
+Windows may show a SmartScreen warning on first run because this build isn't
+code-signed. Click **More info → Run anyway**. This is the same honest state the
+original macOS app was in before Developer ID signing (see its README) — a hobby
+project without a paid certificate, not a sign anything is wrong.
+
+Releases are built by [GitHub Actions](.github/workflows/release.yml) on a real
+Windows runner — not hand-verified on macOS the way the initial commit here was, so
+they're the trustworthy build if you just want to run the app.
 
 ## What this is
 
@@ -53,10 +65,8 @@ out of scope):
   per-pixel hit-testing (`WS_EX_LAYERED` + a hit-test override), not attempted here.
 - **No login-item / autostart registration**, no Settings window, no reduced-motion
   handling, no multi-display awareness.
-- **Untested.** No Windows machine was available to build this on. Treat it as a
-  from-scratch review, not a working build, until someone compiles it once.
 
-## Building (on Windows, with .NET 8 SDK)
+## Building from source (on Windows, with .NET 8 SDK)
 
 ```powershell
 dotnet build Hangly.Windows.sln
